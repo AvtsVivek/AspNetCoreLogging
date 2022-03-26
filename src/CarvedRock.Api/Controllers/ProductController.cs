@@ -28,7 +28,7 @@ public class ProductController : ControllerBase
     [HttpGet("{id:int}")]
     [ProducesResponseType(typeof(Product), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult Get(int id)
+    public async Task<IActionResult> Get(int id)
     {
         //var product = await _productLogic.GetProductByIdAsync(id);
         _logger.LogDebug("Getting single product in API for {id}", id);
